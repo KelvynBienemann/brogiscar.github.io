@@ -1,0 +1,359 @@
+/* Reset Básico & Cores */
+:root {
+  --primary-color: #0a4a7e; /* Azul escuro */
+  --secondary-color: #f2a900; /* Laranja/Amarelo para destaque */
+  --dark-grey: #333333;
+  --light-grey: #f4f4f4;
+  --text-color: #555555;
+  --white-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--white-color);
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+/* Cabeçalho */
+header {
+  background: var(--dark-grey);
+  color: var(--white-color);
+  padding-top: 20px;
+  min-height: 80px;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+header #logo {
+  float: left;
+  font-size: 1.2em; /* Aumentado para dar mais destaque ao ícone */
+}
+
+header #logo i {
+  font-size: 1.8em; /* Ícone maior */
+  margin-right: 8px;
+  color: var(--secondary-color);
+}
+
+header #logo h1 {
+  margin: 0;
+  font-weight: normal;
+}
+
+header .highlight {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+header nav {
+  float: right;
+  margin-top: 15px;
+}
+
+header nav ul {
+  list-style: none;
+}
+
+header nav ul li {
+  float: left;
+  display: inline;
+  padding: 0 15px;
+}
+
+header nav a {
+  color: var(--white-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover,
+header nav .current a {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+/* Seção Hero */
+#hero {
+  min-height: 400px;
+  background: url("/Imagens/Banner\ Mecanico.png") no-repeat center center/cover; /* Substitua pela sua imagem */
+  color: var(--white-color);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Para o overlay */
+}
+
+#hero::before {
+  /* Overlay para escurecer a imagem e dar contraste ao texto */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Ajuste a opacidade conforme necessário */
+}
+
+#hero .container {
+  position: relative; /* Para o texto ficar acima do overlay */
+  z-index: 1;
+}
+
+#hero h2 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: var(--white-color); /* Garantir que o texto seja branco */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: var(
+    --light-grey
+  ); /* Texto um pouco mais claro que o branco puro, se desejar */
+}
+
+.button-primary {
+  display: inline-block;
+  background: var(--secondary-color);
+  color: var(--dark-grey);
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+}
+
+.button-primary:hover {
+  background: #e09900; /* Um tom mais escuro do laranja */
+  transform: translateY(-2px);
+}
+
+/* Título das Seções */
+.section-title {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: var(--primary-color);
+  padding-top: 40px;
+}
+
+/* Seção de Serviços */
+#services {
+  padding: 40px 0;
+  background-color: var(--light-grey);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.service-item {
+  background: var(--white-color);
+  padding: 25px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-item i {
+  font-size: 3em;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.service-item h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: var(--dark-grey);
+}
+
+.service-item p {
+  font-size: 0.95em;
+  color: var(--text-color);
+}
+
+/* Seção Sobre Nós */
+#about {
+  padding: 40px 0;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-content img {
+  max-width: 45%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-content div {
+  max-width: 55%;
+}
+
+.about-content h3 {
+  font-size: 1.8em;
+  color: var(--dark-grey);
+  margin-bottom: 15px;
+}
+
+/* Seção de Contato */
+#contact {
+  padding: 40px 0;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  text-align: center;
+}
+
+#contact .section-title {
+  color: var(--white-color);
+}
+.contact-info a {
+  text-decoration: none;
+  color: var(--white-color);
+}
+.contact-info p {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: var(--secondary-color);
+}
+
+#contact .button-primary {
+  margin-top: 20px;
+  background-color: var(--secondary-color);
+  color: var(--dark-grey);
+}
+#contact .button-primary:hover {
+  background-color: #e09900;
+}
+
+/* Rodapé */
+footer {
+  background: var(--dark-grey);
+  color: var(--light-grey);
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 0; /* Removido o margin-top para grudar no contato se necessário */
+}
+
+.social-media {
+  margin-top: 10px;
+}
+
+.social-media a {
+  color: var(--light-grey);
+  margin: 0 10px;
+  font-size: 1.5em;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: var(--secondary-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header #logo,
+  header nav {
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  header nav ul {
+    margin-top: 10px;
+  }
+
+  header nav ul li {
+    float: none;
+    display: block;
+    padding: 10px 0;
+  }
+
+  #hero h2 {
+    font-size: 2.2em;
+  }
+
+  #hero p {
+    font-size: 1em;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  .section-title {
+    font-size: 2em;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr; /* Uma coluna em telas menores */
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content img,
+  .about-content div {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero h2 {
+    font-size: 1.8em;
+  }
+  #hero p {
+    font-size: 0.9em;
+  }
+  .button-primary {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+  .section-title {
+    font-size: 1.8em;
+  }
+}
